@@ -1,38 +1,75 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  margin: 10vh 10vw;
+  font-family: 'Karla', sans-serif;
+  text-align: left;
+  color: #2f3640;
+  background-color: white;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.leftSide, .rightSide {
+  width: 30em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.list {
+  overflow-y: scroll;
+  max-height: 60vh;
+  scroll-behavior: auto;
+}
+
+.rightSide {
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  color: #2f3640;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  font-size: 42px;
+}
+
+.title span {
+  text-indent: 2rem;
+}
+
+input {
+  width: 200px;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  padding: 10px;
+  margin: 0 5px 0 0;
+  border: none;
+  border-bottom: 2px #2f3640 solid;
+}
+
+input:focus, button:focus {
+  outline: none;
+}
+
+.addBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  padding: 5px;
+  background-color: #2f3640;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.taskNow {
+  font-size: 50px;
+  font-style: italic;
+  margin-bottom: 20px;
 }

@@ -1,0 +1,19 @@
+.todo {
+    padding: 5px 10px 5px 15px;
+    width: 90%;
+    margin: 25px 0;
+    border-bottom: 2px solid #2f3640;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.timerBtn, .deleteBtn {
+    width: 40px;
+    height: 40px;
+    font-size: 11px;
+    border-radius: 50%;
+    margin: 5px;
+    background-color: #2f3640;
+    color: #fff;
+}
