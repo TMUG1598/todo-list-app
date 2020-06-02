@@ -23,7 +23,7 @@ body {
   flex-direction: column;
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1290px) {
   body {
     margin: 5vh 8vw;
   }

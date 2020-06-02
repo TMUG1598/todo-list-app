@@ -1,7 +1,7 @@
 .timerCont {
     margin-left: 40px;
     height: 70vh;
-    width: 520px;
+    width: 500px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +16,7 @@
     margin-bottom: 20px;
 }
 
-@media (max-width: 1070px) {
+@media (max-width: 1290px) {
     .timerCont {
         margin-top: 5vh;
         margin-left: 0px;
