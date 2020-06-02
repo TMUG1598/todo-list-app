@@ -63,17 +63,17 @@ export default class Timer extends Component {
                             <FontAwesomeIcon icon='play' />
                         </button>
                     )}
-                    {this.state.timerOn === true && (this.state.minutes != 0 || this.state.seconds != 0) && (
+                    {this.state.timerOn === true && (this.state.minutes !== 0 || this.state.seconds !== 0) && (
                         <button onClick={this.stopTimer}>
                             <FontAwesomeIcon icon='pause' />
                         </button>
                     )}
-                    {this.state.timerOn === false && (this.state.minutes >= 0 && this.state.minutes != 25) && (
+                    {this.state.timerOn === false && (this.state.minutes >= 0 && this.state.minutes !== 25) && (
                         <button onClick={this.startTimer}>
                             <FontAwesomeIcon icon='play' />
                         </button>
                     )}
-                    {this.state.timerOn === false && this.state.minutes != 25 && (
+                    {this.state.timerOn === false && this.state.minutes !== 25 && (
                         <button onClick={this.resetTimer}>
                             <FontAwesomeIcon icon='redo-alt' />
                         </button>

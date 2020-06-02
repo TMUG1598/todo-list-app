@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import Todo from './Todo';
-import Timer from './Timer';
-import './App.css';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCheck, faPlus, faTrashAlt, faClock, faPlay, faPause, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
+import { faCheck, faPlay, faPause, faRedoAlt } from '@fortawesome/free-solid-svg-icons'
+import Todo from './Todo';
+import './App.css';
+import db from './firebase';
+import TimerCont from './TimerCont';
+import More from './More';
 
-library.add(faCheck, faPlus, faTrashAlt, faClock, faPlay, faPause, faRedoAlt)
+library.add(faCheck, faPlay, faPause, faRedoAlt)
 
 function App() {
   const deleteTodo = (e) => {
@@ -36,10 +38,18 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState('');
 
+  useEffect(() => {
+
+    db.collection('todos').onSnapshot(snapshot => {
+      setTodos(snapshot.docs.map((doc) => doc.data().title))
+    })
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    setTodos([...todos, input]);
+    setTodos([input, ...todos]);
+
     setInput("");
   }
 
@@ -56,13 +66,13 @@ function App() {
           value={input} 
           onChange={e => setInput(e.target.value)} 
           />
-          <button 
+          <button
+            type='submit' 
             className="addBtn"
             disabled={!input} 
             onClick={handleSubmit}
           >
-            <FontAwesomeIcon icon={faPlus} 
-            onClick={handleSubmit}/>
+            add
           </button>
         </form>
         <div className='list'>
@@ -78,11 +88,9 @@ function App() {
             ))
           }
         </div>
+        <More />
       </div>
-      <div className="rightSide">
-        <div className="taskNow">{name}</div>
-        <Timer/>
-      </div>
+      <TimerCont name={name}/>
     </div>
   );
 }

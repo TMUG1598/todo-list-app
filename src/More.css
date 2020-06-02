@@ -1,0 +1,12 @@
+.moreBelow {
+    text-align: center;
+    color: white;
+    transition: all 2s;
+}
+
+@media (max-width: 1070px) {
+    .moreBelow {
+        margin-top: 50px;
+        color: rgb(47, 54, 64, 0.6);
+    }
+}

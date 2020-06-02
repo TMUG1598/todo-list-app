@@ -1,23 +1,21 @@
 import React from 'react';
 import './Todo.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const Todo = (props) => {
     return (
         <div className="todo">
-            <h3>{props.title}</h3>
-            <div>
-                <button className="timerBtn"
-                    value={props.value}
+            <h3 className="todoName">{props.title}</h3>
+            <div className='todoBtn'>
+                <button value={props.value}
                     onClick={props.timer}
                 >
-                    <FontAwesomeIcon icon='clock' />
+                    timer
                 </button>
-                <button className="deleteBtn"
-                    value={props.value}
+                <button value={props.value}
                     onClick={props.delete}
                 >
-                    <FontAwesomeIcon icon='trash-alt' />
+                    delete
                 </button>
             </div>
         </div>

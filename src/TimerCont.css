@@ -1,0 +1,26 @@
+.timerCont {
+    margin-left: 40px;
+    height: 70vh;
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #2f3640;
+}
+
+.taskNow {
+    font-size: 45px;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 1070px) {
+    .timerCont {
+        margin-top: 5vh;
+        margin-left: 0px;
+        height: 100vh;
+        width: 100%;
+    }
+}
